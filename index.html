@@ -13,12 +13,30 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>Bootstrap webpage</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offset="0">
 
     <!-- Header -->
 
-    <header id="header">        
-        <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <header id="header-container">   
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/images/platzi-logo.png" alt="Logo de Platzi">
+                Conf Hawaii
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#main">La conferencia</a>
+                <a class="nav-item nav-link" href="#speakers">Speakers</a>
+                <a class="nav-item nav-link" href="#date-time">Lugar y fecha</a>
+                <a class="nav-item nav-link" href="#conviertete-en-orador">Conviértete en speaker</a>
+                <a class="nav-item nav-link text-platzi" href="#" data-toggle="modal" data-target="#ModalCompra">Comprar tickets</a>
+              </div>
+            </div>
+        </nav>     
+        <!-- <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="/assets/images/platzi-logo.png" alt="Logo de Platzi">
@@ -31,16 +49,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                        <a class="nav-link" href="#">La conferencia</a>
+                        <a class="nav-link" href="#main">La conferencia</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Speakers</a>
+                        <a class="nav-link" href="#speakers">Speakers</a>
                         </li>            
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Lugar y fecha</a>
+                            <a class="nav-link" href="#date-time">Lugar y fecha</a>
                         </li>              
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Conviértete en speaker</a>
+                            <a class="nav-link" href="#conviertete-en-orador">Conviértete en speaker</a>
                         </li>              
                         <li class="nav-item">
                             <a class="nav-link text-platzi" href="#">Comprar tickets</a>
@@ -48,7 +66,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
     </header>
 
     <!-- Main -->
@@ -87,13 +105,151 @@
                                 y a otros ordadores de primer nivel que tenemos para ti. Te esperamos!
                             </p>
                             <a href="#" class="btn btn-outline-light">Quiero ser orador</a>
-                            <button type="button" class="btn btn-platzi">Quiero comprar tickets</button>
+                            <button type="button" class="btn btn-platzi" data-toggle="modal" data-target="#ModalCompra">Quiero comprar tickets</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Speakers -->
+    <section id="speakers" class="mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center text-uppercase">
+                    <small>Conoce a los</small>
+                    <h2>Oradores</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/assets/speakers/sacha.jpg" alt="Foto de Sacha">
+                        <div class="card-body">
+                          <h5 class="card-title">Sacha Lifszyc</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/assets/speakers/leonidas2.jpeg" alt="Foto de Sacha">
+                        <div class="card-body">
+                          <h5 class="card-title">Leonidas Esteban</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div><div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/assets/speakers/freddy.jpeg" alt="Foto de Sacha">
+                        <div class="card-body">
+                          <h5 class="card-title">Freddy Vega</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div><div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/assets/speakers/cvander.jpeg" alt="Foto de Sacha">
+                        <div class="card-body">
+                          <h5 class="card-title">Cristian Van Der H.</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Date-time -->
+    <section id="date-time">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-6 p-0">
+                    <img src="/assets/images/honolulu.jpg" alt="Honolulu">
+                </div>
+                <div class="col-12 col-lg-6 pt-4 pb-4">
+                    <h2>Honolulu - Octubre 2015</h2>
+                    <p>
+                        Honolulu es la capital y localidad más grande del estado de Hawái,
+                         en los Estados Unidos. Honolulu es la más sureña de entre las 
+                         principales ciudades estadounidenses. Aunque el nombre de Honolulu
+                         se refiere al área urbana en la costa sureste de la isla de Oahu, 
+                         la ciudad y el condado de Honolulu han formado una ciudad-condado 
+                         consolidada que cubre toda la isla (aproximadamente 600 km2 de superficie). 
+                    </p>
+                    <a class="btn btn-outline-light" href="https://es.wikipedia.org/wiki/Honolulu">Conoce más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conviertete en orador -->
+    <section id="conviertete-en-orador" class="pt-4 pb-4">
+        <div class="container">
+          <div class="row">
+            <div class="col text-uppercase text-center">
+              <small>Conviértete en un</small>
+              <h2>Orador</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              Anótate como orador para darnos una <abbr title="charl de 5 mins">charla ignite</abbr>.
+              Cuéntanos de qué quieres hablar!
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-md-8 offset-md-2 col-lg-8 offset-lg-2 pt-2">
+              <form class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="form-group col-12 col-md-6">
+                    <input type="text" class="form-control" placeholder="Nombre" required>
+                    <div class="valid-feedback">
+                      Correcto!!
+                    </div>
+                    <div class="invalid-feedback">
+                      Por favor ingresa tu nombre.
+                    </div>
+                  </div>
+                  <div class="form-group col-12 col-md-6">
+                    <input type="text" class="form-control" placeholder="Apellido" required>
+                    <div class="valid-feedback">
+                      Correcto!!
+                    </div>
+                    <div class="invalid-feedback">
+                      Por favor ingresa tu apellido.
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col">
+                    <textarea class="form-control form-control-lg" placeholder="Sobre qué quieres hablar?" required></textarea>
+                    <div class="valid-feedback">
+                      Correcto!!
+                    </div>
+                    <div class="invalid-feedback">
+                      Debes de escribir sobre qué quieres hablar.
+                    </div>
+                    <small class="form-text text-muted">
+                      Recuerda incluir un título a tu charla.
+                    </small>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <button type="submit" class="btn btn-platzi btn-block">Enviar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer id="footer" class="pt-2 pb-4">
@@ -120,6 +276,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
